@@ -26,25 +26,26 @@
 </head>
 <body class="cloud-bg min-h-screen text-gray-800 flex flex-col items-center justify-center p-4">
 
+  <!-- Reproductor de Audio -->
   <audio id="bg-music" loop preload="auto">
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- Botón Flotante de Música -->
   <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded-full shadow-2xl border-2 border-blue-900 flex items-center gap-2 transition transform active:scale-95">
     <span id="music-icon">🎵</span> <span id="music-text">Música</span>
   </button>
 
   <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl border-8 border-yellow-400 overflow-hidden text-center p-6 my-6 relative">
-    
-    <img src="https://media.giphy.com/media/13m24iFmhomZi0/giphy.gif" alt="Woody" class="absolute top-2 left-2 h-20 pointer-events-none drop-shadow-md z-30">
-    <img src="https://media.giphy.com/media/12R2bKfxceemNq/giphy.gif" alt="Buzz" class="absolute top-2 right-2 h-20 pointer-events-none drop-shadow-md z-30">
 
-    <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 pt-10 pb-5 px-6 border-b-8 border-yellow-400 shadow-md relative z-20">
+    <!-- Encabezado Principal -->
+    <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 pt-8 pb-5 px-6 border-b-8 border-yellow-400 shadow-md relative z-20">
       <p class="text-base uppercase tracking-widest font-black text-white drop-shadow">YO SOY TU AMIGO FIEL</p>
       <h1 class="text-xs font-bold my-2 text-yellow-300 tracking-wider uppercase">TE INVITO AL CUMPLEAÑOS NÚMERO 3 DE</h1>
       <h2 class="text-3xl font-black drop-shadow-lg text-white leading-tight">OSCAR ANDRADE MÉNDEZ</h2>
     </div>
 
+    <!-- Sección Sticker / Foto del Cumpleañero -->
     <div class="my-8 flex flex-col items-center relative z-20">
       <div class="relative bg-yellow-300 p-3.5 rounded-full border-4 border-dashed border-red-500 shadow-2xl transform rotate-1 hover:rotate-0 transition">
         <span class="absolute -top-4 -right-1 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-30">
@@ -54,11 +55,19 @@
       </div>
     </div>
 
-    <p class="text-base font-semibold text-blue-900 mb-5 bg-blue-50 p-3.5 rounded-xl border border-blue-200 shadow-sm relative z-20">
-      "¡Al infinito y más allá!" ✨<br>
-      ¡Ven a celebrar junto a Oscar en este día tan especial!
-    </p>
+    <!-- Sección Intermedia: Woody y Buzz en los costados -->
+    <div class="relative my-6 p-4 bg-blue-50 rounded-2xl border border-blue-200 shadow-sm flex items-center justify-between">
+      <img src="woody.gif" onerror="this.onerror=null; this.src='woody.png';" alt="Woody" class="w-20 h-28 object-contain drop-shadow-md">
+      
+      <p class="text-sm font-semibold text-blue-900 px-2 leading-relaxed">
+        "¡Al infinito y más allá!" ✨<br>
+        ¡Ven a celebrar junto a Oscar en este día tan especial!
+      </p>
 
+      <img src="buzz.gif" onerror="this.onerror=null; this.src='buzz.png';" alt="Buzz" class="w-20 h-28 object-contain drop-shadow-md">
+    </div>
+
+    <!-- Detalles de Fecha, Hora y Lugar -->
     <div class="bg-yellow-50 rounded-2xl p-4 border-2 border-yellow-300 text-left space-y-4 mb-6 shadow-sm relative z-20">
       
       <div class="flex items-center gap-3">
@@ -87,19 +96,22 @@
 
     </div>
 
+    <!-- Contador Regresivo -->
     <div class="bg-blue-900 text-white p-4 rounded-2xl mb-6 shadow-inner relative z-20">
       <p class="text-xs uppercase tracking-wider text-yellow-300 font-bold mb-1">⏱️ Faltan únicamente:</p>
       <div id="timer" class="text-2xl font-bold text-yellow-400 tracking-wider">Cargando cronómetro...</div>
     </div>
 
+    <!-- Botón de Ubicación GPS -->
     <a href="https://maps.google.com/?q=Floresta+2" target="_blank" 
        class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-3.5 px-4 rounded-xl shadow-lg transition transform active:scale-95 relative z-20">
       🗺️ ¿Cómo llegar? (Ubicación GPS)
     </a>
 
-    <div class="flex justify-between items-end mt-6 -mb-2 px-2 relative z-20">
-      <img src="tiroalblanco.gif" onerror="this.onerror=null; this.src='https://media.giphy.com/media/3o7TKSx0g7RqP3tI3K/giphy.gif';" alt="Tiro al blanco" class="h-24 object-contain drop-shadow-md">
-      <img src="jessie.png" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/en/e/e1/Jessie_Toy_Story.png';" alt="Jessie" class="h-24 object-contain drop-shadow-md">
+    <!-- Sección Inferior: Tiro al Blanco y Jessie -->
+    <div class="flex justify-around items-end mt-6 -mb-2 px-2 relative z-20">
+      <img src="tiroalblanco.gif" alt="Tiro al blanco" class="h-24 object-contain drop-shadow-md">
+      <img src="jessie.png" alt="Jessie" class="h-24 object-contain drop-shadow-md">
     </div>
 
   </div>
