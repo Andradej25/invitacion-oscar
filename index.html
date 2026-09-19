@@ -16,7 +16,7 @@
     }
     @keyframes pulse-slow {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
+      50% { transform: scale(1.12); }
     }
     .clock-bounce {
       display: inline-block;
@@ -28,36 +28,31 @@
 
   <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl border-8 border-yellow-400 overflow-hidden text-center p-6 my-6 relative">
     
-    <!-- Personajes PNG montados flotando arriba -->
-    <img src="woody.png" alt="Woody" class="absolute -top-1 -left-2 h-28 pointer-events-none drop-shadow-xl z-20">
-    <img src="buzz.png" alt="Buzz" class="absolute -top-1 -right-2 h-28 pointer-events-none drop-shadow-xl z-20">
+    <img src="woody.gif" alt="Woody GIF" class="absolute top-2 left-2 h-20 pointer-events-none drop-shadow-md z-10 opacity-90">
+    <img src="buzz.gif" alt="Buzz GIF" class="absolute top-2 right-2 h-20 pointer-events-none drop-shadow-md z-10 opacity-90">
 
-    <!-- Encabezado Principal -->
-    <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 pt-7 pb-5 px-6 border-b-8 border-yellow-400 shadow-md relative">
+    <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 pt-8 pb-5 px-6 border-b-8 border-yellow-400 shadow-md relative z-20">
       <p class="text-base uppercase tracking-widest font-black text-white drop-shadow">YO SOY TU AMIGO FIEL</p>
       <h1 class="text-xs font-bold my-2 text-yellow-300 tracking-wider uppercase">TE INVITO AL CUMPLEAÑOS NÚMERO 3 DE</h1>
       <h2 class="text-3xl font-black drop-shadow-lg text-white leading-tight">OSCAR ANDRADE MÉNDEZ</h2>
     </div>
 
-    <!-- Sección Sticker / Foto del Cumpleañero -->
-    <div class="my-6 flex flex-col items-center relative">
-      <div class="relative bg-yellow-300 p-3 rounded-full border-4 border-dashed border-red-500 shadow-xl transform rotate-1 hover:rotate-0 transition">
-        <span class="absolute -top-3 -right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-30">
+    <div class="my-8 flex flex-col items-center relative z-20">
+      <div class="relative bg-yellow-300 p-3.5 rounded-full border-4 border-dashed border-red-500 shadow-2xl transform rotate-1 hover:rotate-0 transition">
+        <span class="absolute -top-4 -right-1 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-30">
           El cumpleañero ⭐
         </span>
-        <img src="oscar.jpg" alt="Foto de Oscar" class="w-40 h-40 object-cover rounded-full border-4 border-white shadow-inner">
+        <img src="oscar.jpg" alt="Foto de Oscar" class="w-52 h-52 object-cover rounded-full border-4 border-white shadow-inner">
       </div>
     </div>
 
-    <p class="text-base font-semibold text-blue-900 mb-5 bg-blue-50 p-3 rounded-xl border border-blue-200 shadow-sm">
+    <p class="text-base font-semibold text-blue-900 mb-5 bg-blue-50 p-3.5 rounded-xl border border-blue-200 shadow-sm relative z-20">
       "¡Al infinito y más allá!" ✨<br>
       ¡Ven a celebrar junto a Oscar en este día tan especial!
     </p>
 
-    <!-- Detalles de Fecha, Hora y Lugar -->
-    <div class="bg-yellow-50 rounded-2xl p-4 border-2 border-yellow-300 text-left space-y-4 mb-6 shadow-sm">
+    <div class="bg-yellow-50 rounded-2xl p-4 border-2 border-yellow-300 text-left space-y-4 mb-6 shadow-sm relative z-20">
       
-      <!-- Fecha -->
       <div class="flex items-center gap-3">
         <span class="text-3xl">📅</span>
         <div>
@@ -66,7 +61,6 @@
         </div>
       </div>
 
-      <!-- Hora con Reloj Animado -->
       <div class="flex items-center gap-3">
         <span class="text-3xl clock-bounce">⏰</span>
         <div>
@@ -75,7 +69,6 @@
         </div>
       </div>
 
-      <!-- Lugar con Casita -->
       <div class="flex items-center gap-3">
         <span class="text-3xl">🏡</span>
         <div>
@@ -86,21 +79,19 @@
 
     </div>
 
-    <!-- Contador Regresivo -->
-    <div class="bg-blue-900 text-white p-4 rounded-2xl mb-6 shadow-inner">
+    <div class="bg-blue-900 text-white p-4 rounded-2xl mb-6 shadow-inner relative z-20">
       <p class="text-xs uppercase tracking-wider text-yellow-300 font-bold mb-1">⏱️ Faltan únicamente:</p>
       <div id="timer" class="text-2xl font-bold text-yellow-400 tracking-wider">Cargando cronómetro...</div>
     </div>
 
-    <!-- Botón Único de Ubicación GPS -->
     <a href="https://maps.google.com/?q=Floresta+2" target="_blank" 
-       class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-3 px-4 rounded-xl shadow-lg transition transform active:scale-95">
+       class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-3.5 px-4 rounded-xl shadow-lg transition transform active:scale-95 relative z-20">
       🗺️ ¿Cómo llegar? (Ubicación GPS)
     </a>
 
-    <!-- Personaje PNG Jessie abajo -->
-    <div class="flex justify-center items-end mt-6 -mb-2">
-      <img src="jessie.png" alt="Jessie" class="h-24 object-contain drop-shadow-lg">
+    <div class="flex justify-between items-end mt-6 -mb-2 px-2 relative z-20">
+      <img src="Tiroalblanco.gif" alt="Tiro al Blanco" class="h-20 object-contain drop-shadow-md opacity-95">
+      <img src="jessie.png" alt="Jessie" class="h-20 object-contain drop-shadow-md opacity-95">
     </div>
 
   </div>
