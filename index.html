@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Cumpleaños #3 de Oscar! 🚀🤠</title>
+  <title>¡Cumpleaños #3 de Oscar Andrade Méndez! 🚀🤠</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -14,62 +14,50 @@
         radial-gradient(circle at 50% 50%, #5ca0f2 20%, transparent 20%),
         radial-gradient(circle at 20% 20%, #ffffff 15%, transparent 16%);
     }
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    .clock-bounce {
+      display: inline-block;
+      animation: pulse-slow 1.8s infinite ease-in-out;
+    }
   </style>
 </head>
 <body class="cloud-bg min-h-screen text-gray-800 flex flex-col items-center justify-center p-4">
 
   <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl border-8 border-yellow-400 overflow-hidden text-center p-6 my-6 relative">
     
+    <!-- Personajes PNG montados flotando arriba -->
+    <img src="woody.png" alt="Woody" class="absolute -top-1 -left-2 h-28 pointer-events-none drop-shadow-xl z-20">
+    <img src="buzz.png" alt="Buzz" class="absolute -top-1 -right-2 h-28 pointer-events-none drop-shadow-xl z-20">
+
     <!-- Encabezado Principal -->
-    <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 p-5 border-b-8 border-yellow-400 shadow-md">
-      <p class="text-sm uppercase tracking-widest font-bold text-white">¡Hay un amigo en mí!</p>
-      <h1 class="text-2xl font-black drop-shadow-md my-1 text-yellow-300">TE INVITO AL CUMPLEAÑOS DE</h1>
-      <h2 class="text-5xl font-black drop-shadow-lg text-white tracking-wide">OSCAR</h2>
-      <p class="text-2xl font-bold mt-1 text-yellow-300">¡CUMPLE 3 AÑOS! 🚀🤠</p>
+    <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 pt-7 pb-5 px-6 border-b-8 border-yellow-400 shadow-md relative">
+      <p class="text-base uppercase tracking-widest font-black text-white drop-shadow">YO SOY TU AMIGO FIEL</p>
+      <h1 class="text-xs font-bold my-2 text-yellow-300 tracking-wider uppercase">TE INVITO AL CUMPLEAÑOS NÚMERO 3 DE</h1>
+      <h2 class="text-3xl font-black drop-shadow-lg text-white leading-tight">OSCAR ANDRADE MÉNDEZ</h2>
     </div>
 
-    <!-- Sección Sticker / Foto del Festejado -->
-    <div class="my-6 flex flex-col items-center">
+    <!-- Sección Sticker / Foto del Cumpleañero -->
+    <div class="my-6 flex flex-col items-center relative">
       <div class="relative bg-yellow-300 p-3 rounded-full border-4 border-dashed border-red-500 shadow-xl transform rotate-1 hover:rotate-0 transition">
-        <span class="absolute -top-3 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
-          ¡El Festejado! ⭐
+        <span class="absolute -top-3 -right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-30">
+          El cumpleañero ⭐
         </span>
-        <img src="oscar.jpg"
-             alt="Foto de Oscar"
-             class="w-36 h-36 object-cover rounded-full border-4 border-white shadow-inner">
+        <img src="oscar.jpg" alt="Foto de Oscar" class="w-40 h-40 object-cover rounded-full border-4 border-white shadow-inner">
       </div>
     </div>
 
-    <!-- Galería de Personajes -->
-    <div class="my-6">
-      <p class="text-xs uppercase font-bold text-blue-900 tracking-wider mb-3">Acompaña a la pandilla de Toy Story</p>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="bg-yellow-100 p-2 rounded-2xl border-2 border-yellow-400 flex flex-col items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/en/0/01/Woody_Toy_Story_3.png" alt="Woody" class="h-28 object-contain rounded-lg">
-          <span class="text-xs font-bold text-yellow-800 mt-1">Woody</span>
-        </div>
-        <div class="bg-purple-100 p-2 rounded-2xl border-2 border-purple-400 flex flex-col items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Buzz_Lightyear.png" alt="Buzz Lightyear" class="h-28 object-contain rounded-lg">
-          <span class="text-xs font-bold text-purple-800 mt-1">Buzz Lightyear</span>
-        </div>
-        <div class="bg-red-100 p-2 rounded-2xl border-2 border-red-400 flex flex-col items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/en/6/6c/Jessie_Toy_Story_3.png" alt="Jessie" class="h-28 object-contain rounded-lg">
-          <span class="text-xs font-bold text-red-800 mt-1">Jessie</span>
-        </div>
-        <div class="bg-green-100 p-2 rounded-2xl border-2 border-green-400 flex flex-col items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Rex_Toy_Story.png" alt="Rex" class="h-28 object-contain rounded-lg">
-          <span class="text-xs font-bold text-green-800 mt-1">Rex</span>
-        </div>
-      </div>
-    </div>
-
-    <p class="text-base font-semibold text-blue-900 mb-5 bg-blue-50 p-3 rounded-xl border border-blue-200">
+    <p class="text-base font-semibold text-blue-900 mb-5 bg-blue-50 p-3 rounded-xl border border-blue-200 shadow-sm">
       "¡Al infinito y más allá!" ✨<br>
-      ¡No te pierdas esta increíble aventura junto a Oscar!
+      ¡Ven a celebrar junto a Oscar en este día tan especial!
     </p>
 
-    <!-- Detalles de Fecha y Hora -->
-    <div class="bg-yellow-50 rounded-2xl p-4 border-2 border-yellow-300 text-left space-y-3 mb-6 shadow-sm">
+    <!-- Detalles de Fecha, Hora y Lugar -->
+    <div class="bg-yellow-50 rounded-2xl p-4 border-2 border-yellow-300 text-left space-y-4 mb-6 shadow-sm">
+      
+      <!-- Fecha -->
       <div class="flex items-center gap-3">
         <span class="text-3xl">📅</span>
         <div>
@@ -77,13 +65,25 @@
           <p class="font-bold text-gray-800 text-lg">20 de Septiembre</p>
         </div>
       </div>
+
+      <!-- Hora con Reloj Animado -->
       <div class="flex items-center gap-3">
-        <span class="text-3xl">⏰</span>
+        <span class="text-3xl clock-bounce">⏰</span>
         <div>
           <p class="text-xs text-gray-500 uppercase font-bold">Hora</p>
-          <p class="font-bold text-gray-800 text-lg">16:00 PM</p>
+          <p class="font-bold text-gray-800 text-lg">15:00 PM</p>
         </div>
       </div>
+
+      <!-- Lugar con Casita -->
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">🏡</span>
+        <div>
+          <p class="text-xs text-gray-500 uppercase font-bold">Lugar</p>
+          <p class="font-bold text-gray-800 text-lg">Floresta 2</p>
+        </div>
+      </div>
+
     </div>
 
     <!-- Contador Regresivo -->
@@ -92,29 +92,29 @@
       <div id="timer" class="text-2xl font-bold text-yellow-400 tracking-wider">Cargando cronómetro...</div>
     </div>
 
-    <!-- Botones de Acción -->
-    <a href="https://maps.app.goo.gl/oAM9c48RhA9hMTY1A" target="_blank" 
-       class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-3 px-4 rounded-xl shadow-lg mb-3 transition transform active:scale-95">
+    <!-- Botón Único de Ubicación GPS -->
+    <a href="https://maps.google.com/?q=Floresta+2" target="_blank" 
+       class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-3 px-4 rounded-xl shadow-lg transition transform active:scale-95">
       🗺️ ¿Cómo llegar? (Ubicación GPS)
     </a>
 
-    <a href="https://wa.me/?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20#3%20de%20Oscar%20🚀" target="_blank" 
-       class="block w-full bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-3 px-4 rounded-xl shadow-lg transition transform active:scale-95">
-      ✅ Confirmar Asistencia por WhatsApp
-    </a>
+    <!-- Personaje PNG Jessie abajo -->
+    <div class="flex justify-center items-end mt-6 -mb-2">
+      <img src="jessie.png" alt="Jessie" class="h-24 object-contain drop-shadow-lg">
+    </div>
 
   </div>
 
-  <p class="text-white text-xs text-center opacity-80 mb-4">Celebración de Oscar • Toy Story Party 🎉</p>
+  <p class="text-white text-xs text-center opacity-80 mb-4">Celebración de Oscar Andrade Méndez • Toy Story Party 🎉</p>
 
   <script>
     function updateTimer() {
       const now = new Date();
       let targetYear = now.getFullYear();
-      let targetDate = new Date(`Sep 20, ${targetYear} 16:00:00`).getTime();
+      let targetDate = new Date(`Sep 20, ${targetYear} 15:00:00`).getTime();
       
       if (now.getTime() > targetDate) {
-        targetDate = new Date(`Sep 20, ${targetYear + 1} 16:00:00`).getTime();
+        targetDate = new Date(`Sep 20, ${targetYear + 1} 15:00:00`).getTime();
       }
 
       const distance = targetDate - now.getTime();
