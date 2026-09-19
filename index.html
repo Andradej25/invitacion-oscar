@@ -26,11 +26,21 @@
 </head>
 <body class="cloud-bg min-h-screen text-gray-800 flex flex-col items-center justify-center p-4">
 
+  <!-- Reproductor de Audio -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Botón Flotante para Encender/Apagar Música -->
+  <button id="music-btn" onclick="toggleMusic()" class="fixed top-4 right-4 z-50 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded-full shadow-2xl border-2 border-blue-900 flex items-center gap-2 transition transform active:scale-95">
+    <span id="music-icon">🎵</span> <span id="music-text">Música</span>
+  </button>
+
   <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl border-8 border-yellow-400 overflow-hidden text-center p-6 my-6 relative">
     
-    <!-- GIFs Superiores Flotantes -->
-    <img src="woody.gif" alt="Woody GIF" class="absolute top-2 left-2 h-20 pointer-events-none drop-shadow-md z-10 opacity-90">
-    <img src="buzz.gif" alt="Buzz GIF" class="absolute top-2 right-2 h-20 pointer-events-none drop-shadow-md z-10 opacity-90">
+    <!-- GIFs / Imágenes Superiores -->
+    <img src="woody.gif" onerror="this.onerror=null; this.src='woody.png';" alt="Woody" class="absolute top-2 left-2 h-20 pointer-events-none drop-shadow-md z-10 opacity-90">
+    <img src="buzz.gif" onerror="this.onerror=null; this.src='buzz.png';" alt="Buzz" class="absolute top-2 right-2 h-20 pointer-events-none drop-shadow-md z-10 opacity-90">
 
     <!-- Encabezado Principal -->
     <div class="bg-red-600 text-yellow-300 -mx-6 -mt-6 pt-8 pb-5 px-6 border-b-8 border-yellow-400 shadow-md relative z-20">
@@ -39,7 +49,7 @@
       <h2 class="text-3xl font-black drop-shadow-lg text-white leading-tight">OSCAR ANDRADE MÉNDEZ</h2>
     </div>
 
-    <!-- Sección Sticker / Foto del Cumpleañero (+30% más grande) -->
+    <!-- Sección Sticker / Foto del Cumpleañero -->
     <div class="my-8 flex flex-col items-center relative z-20">
       <div class="relative bg-yellow-300 p-3.5 rounded-full border-4 border-dashed border-red-500 shadow-2xl transform rotate-1 hover:rotate-0 transition">
         <span class="absolute -top-4 -right-1 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-30">
@@ -98,10 +108,10 @@
       🗺️ ¿Cómo llegar? (Ubicación GPS)
     </a>
 
-    <!-- Personajes Inferiores Corregidos -->
+    <!-- Personajes Inferiores -->
     <div class="flex justify-between items-end mt-6 -mb-2 px-2 relative z-20">
-      <img src="tiroalblanco.gif" alt="Tiro al blanco" class="h-20 object-contain drop-shadow-md opacity-95">
-      <img src="jessie.png" alt="Jessie" class="h-20 object-contain drop-shadow-md opacity-95">
+      <img src="tiroalblanco.gif" onerror="this.onerror=null; this.src='Tiroalblanco.gif';" alt="Tiro al blanco" class="h-20 object-contain drop-shadow-md opacity-95">
+      <img src="jessie.png" onerror="this.onerror=null; this.src='jessie.gif';" alt="Jessie" class="h-20 object-contain drop-shadow-md opacity-95">
     </div>
 
   </div>
@@ -109,6 +119,7 @@
   <p class="text-white text-xs text-center opacity-80 mb-4">Celebración de Oscar Andrade Méndez • Toy Story Party 🎉</p>
 
   <script>
+    // Control de Cronómetro
     function updateTimer() {
       const now = new Date();
       let targetYear = now.getFullYear();
@@ -135,6 +146,32 @@
 
     updateTimer();
     setInterval(updateTimer, 1000);
+
+    // Control de Música
+    const music = document.getElementById('bg-music');
+    const musicIcon = document.getElementById('music-icon');
+    const musicText = document.getElementById('music-text');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicIcon.textContent = '🔊';
+        musicText.textContent = 'Pausar';
+      } else {
+        music.pause();
+        musicIcon.textContent = '🎵';
+        musicText.textContent = 'Música';
+      }
+    }
+
+    document.body.addEventListener('click', function() {
+      if (music.paused) {
+        music.play().then(() => {
+          musicIcon.textContent = '🔊';
+          musicText.textContent = 'Pausar';
+        }).catch(() => {});
+      }
+    }, { once: true });
   </script>
 </body>
 </html>
